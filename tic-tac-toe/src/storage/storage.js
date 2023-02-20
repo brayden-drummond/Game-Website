@@ -10,11 +10,11 @@ export class Storage {
 
   // load game data from previous games
   getData() {
-    return JSON.parse(localStorage.getItem(this.localStorage) as string)
+    return JSON.parse(localStorage.getItem(this.localStorage))
   }
 
   // update local stroage data
-  updateData(data: any) {
+  updateData(data) {
     localStorage.setItem(this.storageName, JSON.stringify(data))
   }
 }
