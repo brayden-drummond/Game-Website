@@ -21,4 +21,25 @@ export class Board extends React.Component {
   };
 
   storage = new Storage();
+
+  handleBoxClick(index) {
+    const boxes = this.state.boxes.slice();
+
+    let history = this.state.history;
+
+    // determine winner if game finished
+    if (utils.winner(boxes) || boxes[index]) {
+      return
+    };
+    // stop game if all boxes have been clicked
+
+    if (utils.gameOver(boxes) === true) {
+      return
+    };
+
+    // alternate player turn
+    boxes[index] = this.state.xTurn ? 'X' : 'O'
+
+  }
+
 }
