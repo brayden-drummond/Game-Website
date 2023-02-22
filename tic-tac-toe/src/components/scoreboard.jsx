@@ -21,7 +21,7 @@ export class Scoreboard extends React.Component {
       <div className="game">
         <h1>Recent games:</h1>
         <ul>
-          {this.state.scoreboard.map((leader, i) => {
+          {this.state.scoreboard?.map((leader, i) => {
             return <li key={i}>{leader}</li>
           })}
         </ul>
