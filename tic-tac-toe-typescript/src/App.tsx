@@ -35,8 +35,38 @@ function App() {
     setHistory([..._history, { squares }]);
     setStepNumber(_history.length);
   }
+
+  const jumpTo = (step: number) => {
+    setStepNumber(step);
+    setXIsNext(step % 2 === 0)
+    setFinished(false);
+  };
+
+  const _history = [...history];
+  const squares = [..._history[stepNumber].squares];
+  const winner = calculateWinner(squares);
+  const status = winner ? "Winner: " + winner : "Next player: " + (xIsNext ? "X" : "O");
+  const moves = _history.map((step, move) => {
+    const desc = move ? "Go to move #" + move : "Go to game start";
+    return (
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{desc}</button>
+      </li>
+    );
+  });
   return (
-    <div></div>
+    <div className="game">
+      <Board
+      squares={squares}
+      finished={finished}
+      onClick={i => handleClick(i)}
+      />
+      <div className="game-info">
+        <div>{status}</div>
+        <ol>{moves}</ol>
+
+      </div>
+    </div>
   );
 }
 
