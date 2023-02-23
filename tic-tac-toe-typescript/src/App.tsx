@@ -2,7 +2,7 @@ import React, { useState, ReactElement } from "react";
 import Board from "./components/Board";
 import './App.css';
 
-import calculateWinner from "./helpers"
+import { calculateWinner } from "./helpers"
 
 function App() {
   const [history, setHistory] = useState([{ squares: new Array(9) }]);
@@ -26,9 +26,14 @@ function App() {
       return;
     }
     const winner = calculateWinner(squares);
-    
-
-    
+    if (winner) {
+      setFinished(true);
+      return;
+    }
+    squares[i] = xIsNext ? "X" : "O";
+    setXIsNext(!xIsNext)
+    setHistory([..._history, { squares }]);
+    setStepNumber(_history.length);
   }
   return (
     <div></div>
