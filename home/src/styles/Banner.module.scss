@@ -3,7 +3,22 @@
 //   gap: 8px; padding: 24px; background-color: #fe0505; color: #444444;
 //   font-size: 1.2rem; font-weight: bolder; white-space: nowrap;  
 // }
+
+.bannerContainer {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bannerText {
+  color: rgb(255, 255, 255);
+  position: fixed;
+}
+
 .banner {
+  z-index: -1;
   display: flex;
   align-items: center;
   height: fit-content;

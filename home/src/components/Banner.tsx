@@ -6,10 +6,15 @@ const backgroundVideo = require('../media/background.mp4')
 
 export default function Banner() {
   return (
-    <nav className={styles.banner}>
-      <video autoPlay muted loop className="nav-video">
+    <div className={styles.bannerContainer}>
+      <div className={styles.bannerText}>
+        <h3>Games by Brayden</h3>
+      </div>
+      <div className={styles.banner}>
+      <video autoPlay muted loop className={styles.backgroundVideo}>
         <source src={backgroundVideo} type="video/mp4" />
       </video>
-    </nav>
+      </div>
+    </div>
   )
 }
