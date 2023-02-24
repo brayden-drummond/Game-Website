@@ -8,7 +8,7 @@ export default function Banner() {
   return (
     <div className={styles.bannerContainer}>
       <div className={styles.bannerText}>
-        <h3>Games by Brayden</h3>
+        <h3>Games by Brayden.</h3>
       </div>
       <div className={styles.banner}>
       <video autoPlay muted loop className={styles.backgroundVideo}>

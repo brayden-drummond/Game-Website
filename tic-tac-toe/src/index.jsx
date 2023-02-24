@@ -6,10 +6,6 @@ import { StrictMode } from 'react'
 
 import App from './App'
 
-import './styles/board.css'
-import './styles/box.css'
-import './styles/buttons.css'
-
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement)
 
