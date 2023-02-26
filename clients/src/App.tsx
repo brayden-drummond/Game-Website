@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Banner from './components/Banner';
+import TicTacToe from './tic-tac-toe/Tic-Tac-Toe';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Banner />
       </div>
       <h1>Home Page</h1>
+      <TicTacToe />
     </div>
   );
 }

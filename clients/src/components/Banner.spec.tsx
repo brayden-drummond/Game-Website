@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { getByRole, render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 
 import Banner from './Banner';
@@ -12,15 +12,13 @@ describe('Banner component', () => {
   });
     it('renders the background video', () => {
     const mockSrc = 'test_video.mp4';
-    const { container } = render(<Banner backgroundVideo={mockSrc} />);
+    const { container } = render(<Banner />);
   
     
-    const videoElement = container.querySelector('video');
-    console.log(videoElement);
+    const backgroundVideoElement = screen.getByRole('video');
+    console.log(backgroundVideoElement);
     
     // expect(videoElement.src).toContain(mockSrc);
-    expect(videoElement.autoplay).toBe(true);
-    expect(videoElement.muted).toBe(true);
-    expect(videoElement.loop).toBe(true);
+    expect(backgroundVideoElement).toHaveAttribute('src', '../media/background.mp4');
   });
 });
