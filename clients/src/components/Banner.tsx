@@ -11,7 +11,7 @@ export default function Banner() {
         <h3>Games by Brayden.</h3>
       </div>
       <div className={styles.banner}>
-      <video autoPlay muted loop className={styles.backgroundVideo}>
+      <video aria-label='background-video' autoPlay muted loop className={styles.backgroundVideo}>
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       </div>
