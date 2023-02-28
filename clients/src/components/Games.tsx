@@ -6,9 +6,6 @@ import styles from '../styles/Games.module.scss'
 
 export default function Games() {
   return (
-    <>
-     <div>
-      </div>
       <div className={styles.container}>
         {gamesData.map((game, i) => {
           return (
@@ -21,8 +18,5 @@ export default function Games() {
           )
         })}
       </div>
-    
-        
-    </>
   )
 }
