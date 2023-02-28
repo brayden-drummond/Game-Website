@@ -8,7 +8,6 @@ export default function Games() {
   return (
     <>
      <div>
-      <Link to="/">Home</Link>
       </div>
       <div className={styles.container}>
         {gamesData.map((game, i) => {
