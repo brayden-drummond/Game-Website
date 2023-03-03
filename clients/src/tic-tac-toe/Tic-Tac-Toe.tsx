@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from "react";
+import React, { useState } from "react";
 import Board from "./Board";
 import './TicTacToe.css';
 
@@ -55,6 +55,11 @@ function TicTacToe() {
     );
   });
   return (
+    <>
+    <div className="game-container">
+      <h3>Welcome to Tic Tac Toe</h3>
+      <p>Please select a box to begin</p>
+    </div>
     <div className="game">
       <Board
       squares={squares}
@@ -67,6 +72,7 @@ function TicTacToe() {
 
       </div>
     </div>
+    </>
   );
 }
 
