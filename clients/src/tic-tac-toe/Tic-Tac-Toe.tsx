@@ -57,8 +57,8 @@ function TicTacToe() {
   return (
     <>
     <div className="game-container">
-      <h3>Welcome to Tic Tac Toe</h3>
-      <p>Please select a box to begin</p>
+      <h2>Welcome to Tic Tac Toe</h2>
+      {stepNumber === 0 ? <h3>Please select a box to begin</h3>: <h3>{status}</h3>}
     </div>
     <div className="game">
       <Board
@@ -67,7 +67,6 @@ function TicTacToe() {
       onClick={i => handleClick(i)}
       />
       <div className="game-info">
-        <div>{status}</div>
         <ol>{moves}</ol>
 
       </div>
