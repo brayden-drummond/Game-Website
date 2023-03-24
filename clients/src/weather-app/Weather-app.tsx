@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {api} from './api'
+import styles from './Weather.module.scss'
+
 
 
 function WeatherApp() {
@@ -32,12 +34,12 @@ function WeatherApp() {
   const [weather, setWeather] = useState({main: {temp: 0, }, name: '', sys: {country: ''}});
   
   return (
-    <div className="app">
+    <div className={styles.app}>
       <main>
-        <div className="search-box">
+        <div className={styles.searchBox}>
         <input 
             type="text"
-            className="search-bar"
+            className={styles.searchBar}
             placeholder="Search..."
             onChange={e => setQuery(e.target.value)}
             value={query}
@@ -46,13 +48,13 @@ function WeatherApp() {
         </div>
         {(typeof weather.main != "undefined") ? (
         <div>
-          <div className="location-box">
-            <div className="location">{weather.name}, {weather.sys.country}</div>
+          <div className={styles.locationBox}>
+            <div className={styles.location}>{weather.name}, {weather.sys.country}</div>
           </div>
-          <div className="weather-box">
-            <div className="temperature">Temperature: {Math.round(weather.main.temp)}°c
+          <div className={styles.weatherBox}>
+            <div className={styles.temperature}>Temperature: {Math.round(weather.main.temp)}°c
           </div>
-            <div className="date">{dateBuilder(new Date())}</div>
+            <div className={styles.date}>{dateBuilder(new Date())}</div>
           </div>
         </div>
         ) : ''}
