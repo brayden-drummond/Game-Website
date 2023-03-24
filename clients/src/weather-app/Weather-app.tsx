@@ -29,7 +29,7 @@ function WeatherApp() {
   }
 
   const [query, setQuery] = useState('');
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({main: {temp: 0, }, name: '', sys: {country: ''}});
   
   return (
     <div className="app">
